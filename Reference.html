@@ -1,0 +1,1163 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0101)http://developer.android.com/intl/ja/reference/android/service/wallpaper/WallpaperService.Engine.html -->
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LiveWallPaper | Android Developers</title>
+<link href="./default.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="gc-documentation 
+develop" itemscope="" itemtype="http://schema.org/Article">
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+	public
+	class
+<h1 itemprop="name">LiveWallPaper</h1>
+
+	extends <a href="http://developer.android.com/reference/java/lang/Object.html">Object</a><br>
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-7">
+<table class="jd-inheritance-table">
+
+	<tbody>
+	<tr>
+		<td colspan="6" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/java/lang/Object.html">java.lang.Object</a></td>
+	</tr>
+
+	<tr>
+		<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+		<td colspan="5" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/android/content/Context.html">android.content.Context</a></td>
+	</tr>
+
+	<tr>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+		<td colspan="4" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/android/content/ContextWrapper.html">android.content.ContextWrapper</a></td>
+	</tr>
+
+	<tr>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+		<td colspan="3" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/android/app/Service.html">android.app.Service</a></td>
+	</tr>
+
+	<tr>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+		<td colspan="2" class="jd-inheritance-class-cell"><a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html">android.service.wallpaper.WallpaperService</a></td>
+	 </tr>
+
+	<tr>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;</td>
+			<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+		<td colspan="1" class="jd-inheritance-class-cell">jp.template.LiveWallPaper</td>
+	 </tr>
+
+</tbody>
+</table>
+
+
+<div class="jd-descr">
+
+<h2 style="margin-bottom: 0px;">Class Overview</h2><hr>
+<p itemprop="articleBody">
+LiveWallPaperは、ライブ壁紙を作成するために必要な機能をまとめた物です<br />
+使用例が<a href="https://github.com/nakamura24/LiveWallPaperTemplate">https://github.com/nakamura24/LiveWallPaperTemplate</a>にあります
+</p>
+
+</div><!-- jd-descr -->
+
+
+<div class="jd-descr">
+
+
+<h2 style="margin-bottom: 0px;">Summary</h2><hr>
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+	
+	<tr class="alt-color api apilevel-1" >
+		<td class="jd-typecol"><nobr>
+		protected
+		<a href="/reference/android/graphics/Bitmap.html">Bitmap</a></nobr></td>
+		<td class="jd-linkcol">BitmapImage</td>
+		<td class="jd-descrcol" width="100%">描画するビットマップイメージを設定する</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int[] </nobr></td>
+		<td class="jd-linkcol">ImageResources</td>
+		<td class="jd-descrcol" width="100%">オフセットが変更されたときに描画する画像のリソースIDを設定する</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int</nobr></td>
+		<td class="jd-linkcol">BackgroundColor</td>
+		<td class="jd-descrcol" width="100%">背景色</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected long</nobr></td>
+		<td class="jd-linkcol">DelayMillis</td>
+		<td class="jd-descrcol" width="100%">再描画するまでのディレイタイム。0の場合、再描画しない</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int</nobr></td>
+		<td class="jd-linkcol">Offset</td>
+		<td class="jd-descrcol" width="100%">オフセットの値</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int	</nobr></td>
+		<td class="jd-linkcol">WidthPixels</td>
+		<td class="jd-descrcol" width="100%">ディスプレイの幅(pixcel)</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int </nobr></td>
+		<td class="jd-linkcol">HeightPixels</td>
+		<td class="jd-descrcol" width="100%">ディスプレイの高さ(pixcel)</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected float </nobr></td>
+		<td class="jd-linkcol">Scaled</td>
+		<td class="jd-descrcol" width="100%">ディスプレイの解像度。160x240の場合、1</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected boolean </nobr></td>
+		<td class="jd-linkcol">UseTimeTick</td>
+		<td class="jd-descrcol" width="100%">TimeTickの使用</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected boolean </nobr></td>
+		<td class="jd-linkcol">UseBatteryChanged</td>
+		<td class="jd-descrcol" width="100%">BatteryChangedの使用</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int </nobr></td>
+		<td class="jd-linkcol">BatteryLevel</td>
+		<td class="jd-descrcol" width="100%">Battery Level</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected int </nobr></td>
+		<td class="jd-linkcol">BatteryScale</td>
+		<td class="jd-descrcol" width="100%">Battery Scale。Battery Levelがこの値と同じ場合100%</td>
+	</tr>
+	
+	<tr class=" api apilevel-1" >
+		<td class="jd-typecol"><nobr> protected boolean </nobr></td>
+		<td class="jd-linkcol">UseSensor</td>
+		<td class="jd-descrcol" width="100%">センサの使用</td>
+	</tr>
+	
+
+</table>
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tbody><tr><th colspan="12">Public Methods</th></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr></td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html#onCreate()">onCreate</a></span>()</nobr>
+		<div class="jd-descrdiv">Called by the system when the service is first created.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-7">
+		<td class="jd-typecol"><nobr>abstract 
+			<a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.Engine.html">WallpaperService.Engine</a></nobr>
+		</td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html#onCreateEngine()">onCreateEngine</a></span>()</nobr>
+		<div class="jd-descrdiv">Must be implemented to return a new instance of the wallpaper's engine.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html#onDestroy()">onDestroy</a></span>()</nobr>
+		<div class="jd-descrdiv">Called by the system to notify a Service that it is no longer used and is being removed.</div>
+</td></tr>
+
+</tbody></table>
+
+
+<table id="promethods" class="jd-sumtable"><tbody><tr><th colspan="12">Protected Methods</th></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#ChangeImage()">ChangeImage</a></span>()</nobr>
+		
+		<div class="jd-descrdiv">描画する画像を変更</div>
+
+</td></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#DrawCanvas(Canvas canvas)">DrawCanvas</a></span>(<a href="http://developer.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas)</nobr>
+		
+		<div class="jd-descrdiv">キャンバスに画像の描画を行う</div>
+
+</td></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#DrawDelay()">DrawDelay</a></span>()</nobr>
+		
+		<div class="jd-descrdiv">再度描画が行われる前に呼び出される</div>
+
+</td></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr>boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#OffsetsChanged(float, float, float, float, int, int)">OffsetsChanged</a></span>(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep, int xPixelOffset, int yPixelOffset)</nobr>
+		
+		<div class="jd-descrdiv">Called to inform you of the wallpaper's offsets changing
+ within its contain, corresponding to the container's
+ call to <code><a href="http://developer.android.com/reference/android/app/WallpaperManager.html#setWallpaperOffsets(android.os.IBinder, float, float)">WallpaperManager.setWallpaperOffsets()</a></code>.</div>
+
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-7">
+		<td class="jd-typecol"><nobr>void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#SurfaceChanged(android.view.SurfaceHolder, int, int, int)">SurfaceChanged</a></span>(<a href="http://developer.android.com/reference/android/view/SurfaceHolder.html">SurfaceHolder</a> holder, int format, int width, int height)</nobr>
+		<div class="jd-descrdiv">Convenience for <code><a href="http://developer.android.com/reference/android/view/SurfaceHolder.Callback.html#surfaceChanged(android.view.SurfaceHolder, int, int, int)">SurfaceHolder.Callback.surfaceChanged()</a></code>.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-7">
+		<td class="jd-typecol"><nobr> void</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#VisibilityChanged(boolean)">VisibilityChanged</a></span>(boolean visible)</nobr>
+		<div class="jd-descrdiv">Called to inform you of the wallpaper becoming visible or
+ hidden.</div>
+</td></tr>
+
+	<tr class="alt-color api apilevel-3">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#DoubleTap(android.view.MotionEvent)">DoubleTap</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">Notified when a double-tap occurs.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-3">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#DoubleTapEvent(android.view.MotionEvent)">DoubleTapEvent</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">Notified when an event within a double-tap gesture occurs, including
+ the down, move, and up events.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr>
+		</td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#Down(android.view.MotionEvent)">Down</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">Notified when a tap occurs with the down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that triggered it.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#Fling(android.view.MotionEvent, android.view.MotionEvent, float, float)">Fling</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e1, <a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e2, float velocityX, float velocityY)</nobr>
+		<div class="jd-descrdiv">Notified of a fling event when it occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ and the matching up <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>.</div>
+</td></tr>
+
+	<tr class="alt-color api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#LongPress(android.view.MotionEvent)">LongPress</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		
+		<div class="jd-descrdiv">Notified when a long press occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that trigged it.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#Scroll(android.view.MotionEvent, android.view.MotionEvent, float, float)">Scroll</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e1, <a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e2, float distanceX, float distanceY)</nobr>
+		<div class="jd-descrdiv">Notified when a scroll occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code> and the
+ current move <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#ShowPress(android.view.MotionEvent)">ShowPress</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">The user has performed a down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code> and not performed
+ a move or up yet.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-3">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#SingleTapConfirmed(android.view.MotionEvent)">SingleTapConfirmed</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">Notified when a single-tap occurs.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-1">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#SingleTapUp(android.view.MotionEvent)">SingleTapUp</a></span>(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</nobr>
+		<div class="jd-descrdiv">Notified when a tap occurs with the up <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that triggered it.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-8">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#Scale(android.view.ScaleGestureDetector)">Scale</a></span>(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</nobr>
+		<div class="jd-descrdiv">Responds to scaling events for a gesture in progress.</div>
+</td></tr>
+	 
+	<tr class=" api apilevel-8">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#ScaleBegin(android.view.ScaleGestureDetector)">ScaleBegin</a></span>(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</nobr>
+		<div class="jd-descrdiv">Responds to the beginning of a scaling gesture.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-8">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#ScaleEnd(android.view.ScaleGestureDetector)">ScaleEnd</a></span>(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</nobr>
+		<div class="jd-descrdiv">Responds to the end of a scale gesture.</div>
+</td></tr>
+	 
+	<tr class="alt-color api apilevel-8">
+		<td class="jd-typecol"><nobr> boolean</nobr> </td>
+		<td class="jd-linkcol" width="100%"><nobr>
+		<span class="sympad"><a href="#SensorChanged(android.hardware.SensorEvent)">SensorChanged</a></span>(int type, float [] values)</nobr>
+		<div class="jd-descrdiv">Called when sensor values have changed.</div>
+</td></tr>
+
+</tbody></table>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2 style="margin-bottom: 0px;">Public Methods</h2><hr>
+
+
+<a name="onCreate()"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		public 
+		void
+	</span>
+	<span class="sympad">onCreate</span>
+	<span class="normal">()</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Called by the system when the service is first created.Do not call this method directly.
+</p></div>
+	</div>
+</div>
+
+
+<a name="onCreateEngine()"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		public 
+		abstract 
+		<a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.Engine.html">WallpaperService.Engine</a>
+	</span>
+	<span class="sympad">onCreateEngine</span>
+	<span class="normal">()</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Must be implemented to return a new instance of the wallpaper's engine.
+ Note that multiple instances may be active at the same time, such as
+ when the wallpaper is currently set as the active wallpaper and the user
+ is in the wallpaper picker viewing a preview of it as well.
+</p></div>
+
+	</div>
+</div>
+
+
+<a name="onDestroy()"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		public 
+		void
+	</span>
+	<span class="sympad">onDestroy</span>
+	<span class="normal">()</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Called by the system to notify a Service that it is no longer used and is being removed.The
+ service should clean up any resources it holds (threads, registered
+ receivers, etc) at this point.Upon return, there will be no more calls
+ in to this Service object and it is effectively dead.Do not call this method directly.
+</p></div>
+
+	</div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2 style="margin-bottom: 0px;">Protected Methods</h2><hr>
+
+
+<a name="ChangeImage()"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		void
+	</span>
+	<span class="sympad">ChangeImage</span>
+	<span class="normal">()</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+		<div class="jd-tagdata jd-tagdescr"><p>オフセットの値により描画する画像を変更する
+		</p></div>
+
+
+<a name="DrawCanvas(Canvas canvas)"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		void
+	</span>
+	<span class="sympad">DrawCanvas</span>
+	<span class="normal">(Canvas canvas)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+		<div class="jd-tagdata jd-tagdescr"><p>背景色を設定、画像のリサイズを行い、キャンバスに画像を描画する
+		</p></div>
+
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>canvas
+		</th><td>描画するキャンバス
+</td>
+		</tr>
+	</tbody></table>
+</div>
+	</div>
+</div>
+
+
+<a name="DrawDelay()"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		void
+	</span>
+	<span class="sympad">DrawDelay</span>
+	<span class="normal">()</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+		<div class="jd-tagdata jd-tagdescr"><p>再度描画が行われる前に呼び出される。次回の再描画の動作を設定する。デフォルトは何もしない
+		</p></div>
+
+
+<a name="OffsetsChanged(float, float, float, float, int, int)"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">OffsetsChanged</span>
+	<span class="normal">(float xOffset, float yOffset, float xOffsetStep, float yOffsetStep, int xPixelOffset, int yPixelOffset)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Called to inform you of the wallpaper's offsets changing
+ within its contain, corresponding to the container's
+ call to <code><a href="http://developer.android.com/reference/android/app/WallpaperManager.html#setWallpaperOffsets(android.os.IBinder, float, float)">WallpaperManager.setWallpaperOffsets()</a></code>.
+</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+
+	</div>
+</div>
+
+
+<a name="SurfaceChanged(int, int, int)"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		void
+	</span>
+	<span class="sympad">SurfaceChanged</span>
+	<span class="normal">(int format, int width, int height)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Convenience for <code><a href="http://developer.android.com/reference/android/view/SurfaceHolder.Callback.html#surfaceChanged(android.view.SurfaceHolder, int, int, int)">SurfaceHolder.Callback.surfaceChanged()</a></code>.
+</p></div>
+
+	</div>
+</div>
+
+
+<a name="VisibilityChanged(boolean)"></a>
+
+<div class="jd-details api apilevel-7"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		void
+	</span>
+	<span class="sympad">VisibilityChanged</span>
+	<span class="normal">(boolean visible)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 7</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Called to inform you of the wallpaper becoming visible or
+ hidden.<em>It is very important that a wallpaper only use
+ CPU while it is visible.</em>.
+</p></div>
+
+	</div>
+</div>
+
+
+
+<a name="DoubleTap(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-3"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">DoubleTap</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 3</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a double-tap occurs.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The down motion event of the first tap of the double-tap.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="DoubleTapEvent(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-3"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">DoubleTapEvent</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 3</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when an event within a double-tap gesture occurs, including
+ the down, move, and up events.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The motion event that occurred during the double-tap gesture.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="Down(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">Down</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a tap occurs with the down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that triggered it. This will be triggered immediately for
+ every down event. All other events should be preceded by this.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The down motion event.
+</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="Fling(android.view.MotionEvent, android.view.MotionEvent, float, float)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">Fling</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e1, <a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e2, float velocityX, float velocityY)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified of a fling event when it occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ and the matching up <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>. The calculated velocity is supplied along
+ the x and y axis in pixels per second.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e1
+		</th><td>The first down motion event that started the fling.</td>
+		</tr>
+		<tr>
+		<th>e2
+		</th><td>The move motion event that triggered the current onFling.</td>
+		</tr>
+		<tr>
+		<th>velocityX
+		</th><td>The velocity of this fling measured in pixels per second
+			along the x axis.</td>
+		</tr>
+		<tr>
+		<th>velocityY
+		</th><td>The velocity of this fling measured in pixels per second
+			along the y axis.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="LongPress(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">LongPress</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a long press occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that trigged it.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The initial on down motion event that started the longpress.
+</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="Scroll(android.view.MotionEvent, android.view.MotionEvent, float, float)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">Scroll</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e1, <a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e2, float distanceX, float distanceY)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a scroll occurs with the initial on down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code> and the
+ current move <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>. The distance in x and y is also supplied for
+ convenience.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e1
+		</th><td>The first down motion event that started the scrolling.</td>
+		</tr>
+		<tr>
+		<th>e2
+		</th><td>The move motion event that triggered the current onScroll.</td>
+		</tr>
+		<tr>
+		<th>distanceX
+		</th><td>The distance along the X axis that has been scrolled since the last
+			call to onScroll. This is NOT the distance between <code>e1</code>
+			and <code>e2</code>.</td>
+		</tr>
+		<tr>
+		<th>distanceY
+		</th><td>The distance along the Y axis that has been scrolled since the last
+			call to onScroll. This is NOT the distance between <code>e1</code>
+			and <code>e2</code>.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="ShowPress(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">ShowPress</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>The user has performed a down <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code> and not performed
+ a move or up yet. This event is commonly used to provide visual
+ feedback to the user to let them know that their action has been
+ recognized i.e. highlight an element.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The down motion event
+</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="SingleTapConfirmed(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-3"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">SingleTapConfirmed</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 3</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a single-tap occurs.
+ </p><p>
+ Unlike <code><a href="http://developer.android.com/reference/android/view/GestureDetector.OnGestureListener.html#onSingleTapUp(android.view.MotionEvent)">onSingleTapUp(MotionEvent)</a></code>, this
+ will only be called after the detector is confident that the user's
+ first tap is not followed by a second tap leading to a double-tap
+ gesture.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The down motion event of the single-tap.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="SingleTapUp(android.view.MotionEvent)"></a>
+
+<div class="jd-details api apilevel-1"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">SingleTapUp</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a> e)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 1</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Notified when a tap occurs with the up <code><a href="http://developer.android.com/reference/android/view/MotionEvent.html">MotionEvent</a></code>
+ that triggered it.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>e
+		</th><td>The up motion event that completed the first tap</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+<a name="Scale(android.view.ScaleGestureDetector)"></a>
+
+<div class="jd-details api apilevel-8"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">Scale</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 8</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Responds to scaling events for a gesture in progress.
+ Reported by pointer motion.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>detector
+		</th><td>The detector reporting the event - use this to
+		retrieve extended info about event state.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+<a name="ScaleBegin(android.view.ScaleGestureDetector)"></a>
+
+<div class="jd-details api apilevel-8"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">ScaleBegin</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 8</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Responds to the beginning of a scaling gesture. Reported by
+ new pointers going down.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>detector
+		</th><td>The detector reporting the event - use this to
+		retrieve extended info about event state.</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+<a name="ScaleEnd(android.view.ScaleGestureDetector)"></a>
+
+<div class="jd-details api apilevel-8"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">ScaleEnd</span>
+	<span class="normal">(<a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a> detector)</span>
+	</h4>
+	<div class="api-level">
+		<div>
+Added in <a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 8</a></div>
+	</div>
+	<div class="jd-details-descr">
+	
+<div class="jd-tagdata jd-tagdescr"><p>Responds to the end of a scale gesture. Reported by existing
+ pointers going up.
+
+ Once a scale has ended, <code><a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html#getFocusX()">getFocusX()</a></code>
+ and <code><a href="http://developer.android.com/reference/android/view/ScaleGestureDetector.html#getFocusY()">getFocusY()</a></code> will return focal point
+ of the pointers remaining on the screen.</p></div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Parameters</h5>
+	<table class="jd-tagtable">
+		<tbody><tr>
+		<th>detector
+		</th><td>The detector reporting the event - use this to
+		retrieve extended info about event state.
+</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<a name="SensorChanged(android.hardware.SensorEvent)"></a>
+
+<div class="jd-details api apilevel-8"> 
+	<h4 class="jd-details-title">
+	<span class="normal">
+		protected 
+		boolean
+	</span>
+	<span class="sympad">SensorChanged</span>
+	<span class="normal">(int type, float [] values)</span>
+	</h4>
+      <div class="api-level">
+        <div>
+  Added in <a href="/guide/topics/manifest/uses-sdk-element.html#ApiLevels">API level 3</a></div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called when sensor values have changed.
+ <p>See <code><a href="/reference/android/hardware/SensorManager.html">SensorManager</a></code>
+ for details on possible sensor types.
+ <p>See also <code><a href="/reference/android/hardware/SensorEvent.html">SensorEvent</a></code>.
+ 
+</div>
+
+<div class="jd-tagdata">
+	<h5 class="jd-tagtitle">Returns</h5>
+	<ul class="nolist"><li>true の場合、描画処理を呼び出す
+</li></ul>
+</div>
+
+	</div>
+</div>
+
+
+<hr />
+<!-- ========= END OF CLASS DATA ========= -->
+</body></html>
