@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jp.library.livewallpaper"
-    android:versionCode="1"
-    android:versionName="1.0.1" >
+    android:versionCode="2"
+    android:versionName="1.0.2" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
 
 </manifest>

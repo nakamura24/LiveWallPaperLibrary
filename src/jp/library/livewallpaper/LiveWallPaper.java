@@ -448,8 +448,8 @@ public class LiveWallPaper extends WallpaperService {
 					Log.v(Tag, "TYPE_PROXIMITY distance=" + e.values[0]);
 					sensorChanged(e.sensor.getType(), e.values);
 					break;
-				case Sensor.TYPE_TEMPERATURE:
-					Log.v(Tag, "TYPE_TEMPERATURE " + e.values[0] + "℃");
+				case Sensor.TYPE_AMBIENT_TEMPERATURE:
+					Log.v(Tag, "TYPE_AMBIENT_TEMPERATURE " + e.values[0] + "℃");
 					sensorChanged(e.sensor.getType(), e.values);
 					break;
 				}
