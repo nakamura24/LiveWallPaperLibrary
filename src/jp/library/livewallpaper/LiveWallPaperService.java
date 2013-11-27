@@ -35,7 +35,7 @@ import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener;
 import android.view.SurfaceHolder;
 import android.view.WindowManager;
 
-public class LiveWallPaper extends WallpaperService {
+public class LiveWallPaperService extends WallpaperService {
 	private static String Tag = "LiveWallPaper";
 	protected Bitmap BitmapImage = null;
 	protected int[] ImageResources = {};
@@ -51,7 +51,7 @@ public class LiveWallPaper extends WallpaperService {
 	protected int BatteryScale = 100;
 	protected boolean UseSensor = false;
 
-	public LiveWallPaper() {
+	public LiveWallPaperService() {
 	}
 
 	@Override
@@ -237,11 +237,11 @@ public class LiveWallPaper extends WallpaperService {
 			// タッチイベントを有効
 			setTouchEventsEnabled(true);
 			// GestureDetecotorクラスのインスタンス生成
-			mGestureDetector = new GestureDetector(LiveWallPaper.this,
+			mGestureDetector = new GestureDetector(LiveWallPaperService.this,
 					onGestureListener);
 			// ScaleGestureDetectorクラスのインスタンス生成
 			mScaleGestureDetector = new ScaleGestureDetector(
-					LiveWallPaper.this, onSimpleOnScaleGestureListener);
+					LiveWallPaperService.this, onSimpleOnScaleGestureListener);
 			// Receiver登録
 			IntentFilter filter = new IntentFilter();
 			if (UseTimeTick)
